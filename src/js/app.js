@@ -58,7 +58,7 @@ firebase.auth().onAuthStateChanged(userAuth => {
   if (userAuth) {
 		// We get here if:
 		// - User navigated to the site and is logged in (remembers him)
-		// - User just created a new account (new sig-nup)
+		// - User just created a new account (new sign-up)
 
 		// In case it's a new sign-up, we need to prepare what info we want to save in the DB
 		// TODO: Actually prepare what we will save.
@@ -66,7 +66,7 @@ firebase.auth().onAuthStateChanged(userAuth => {
 			displayName: 'Gefa the Great',
 			strength: 26,
 			intelligence: 27,
-			charmisma: 23,
+			charisma: 23,
 		};
 
 		// This function creates a new user document in the DB if it doesn't exist
