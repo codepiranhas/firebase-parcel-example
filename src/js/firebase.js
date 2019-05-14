@@ -9,7 +9,7 @@ export function signup(email, password) {
 	// - There is no email or password
 	// - Email already exists
 	// - Password is less than 6 characters
-	return firebase.auth().createUserWithEmailAndPassword(email, password)
+	return firebase.auth().createUserWithEmailAndPassword(email, password);
 }
 
 export function signin(email, password) {
@@ -17,7 +17,7 @@ export function signin(email, password) {
 	// It will fail if:
 	// - An account with that email doesn't exist
 	// - The password is wrong
-	return firebase.auth().signInWithEmailAndPassword(email, password)
+	return firebase.auth().signInWithEmailAndPassword(email, password);
 }
 
 export async function logout() {
@@ -40,10 +40,10 @@ export function createUserInDB(user, additionalData) {
 					userRef.set({
 						createdAt: new Date(),
 						...additionalData
-					})
+					});
 				}
 				// Get the user document
-				return db.collection('users').doc(user.uid)
+				return db.collection('users').doc(user.uid);
 			})
 			.then(userRef => {
 				// Get the user (new or old) from the database.
@@ -54,10 +54,10 @@ export function createUserInDB(user, additionalData) {
 					const user = {
 						uid: snapshot.id,
 						...snapshot.data()
-					}
+					};
 
 					resolve(user);
-				})
+				});
 			})
 			.catch(err => {
 				reject(err);
