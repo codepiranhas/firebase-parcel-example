@@ -17,7 +17,7 @@ logoutButtonEl.addEventListener("click", onLogout);
 /**
  * SIGN-UP METHOD
  * 
- * TODO: Somehow the error messages to the user
+ * TODO: Somehow show the error messages to the user
  */
 function onSignup(e) {
 	e.preventDefault();
@@ -60,7 +60,7 @@ firebase.auth().onAuthStateChanged(userAuth => {
 		// - User navigated to the site and is logged in (remembers him)
 		// - User just created a new account (new sig-nup)
 
-		// In case each a new sign-up, we need to prepare what we will save in the DB
+		// In case it's a new sign-up, we need to prepare what info we want to save in the DB
 		// TODO: Actually prepare what we will save.
 		const additionalInformation = {
 			displayName: 'Gefa the Great',
@@ -81,7 +81,7 @@ firebase.auth().onAuthStateChanged(userAuth => {
   } else {
 		// We get here if:
 		// - User navigated to the site and is not logged in
-		// - Uuser just clicked logout
+		// - User just clicked logout
 		console.log('User is signed out');
   }
 });
