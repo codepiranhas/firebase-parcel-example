@@ -5,6 +5,7 @@ const db = firebase.firestore();
  */
 export function signup(email, password) {
 	// Tell firebase to create a new user.
+	// Returns a promise
 	// It will fail if:
 	// - There is no email or password
 	// - Email already exists
@@ -14,6 +15,7 @@ export function signup(email, password) {
 
 export function signin(email, password) {
 	// Tell firebase to signin the user.
+	// Returns a promise
 	// It will fail if:
 	// - An account with that email doesn't exist
 	// - The password is wrong
@@ -22,11 +24,13 @@ export function signin(email, password) {
 
 export async function logout() {
 	// Tell firebase to logout the current user.
+	// Returns a promise
 	await firebase.auth().signOut();
 }
 
 export function createUserInDB(user, additionalData) {
 	// We create a promise so we can wait for it at the place where the function is called.
+	// Returns a promise
 	return new Promise((resolve, reject) => {
 		if (!user) { reject('no user'); }
 
